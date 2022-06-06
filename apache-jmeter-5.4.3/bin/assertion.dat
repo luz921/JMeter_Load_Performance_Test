@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="946" lt="146" ts="1654031930075" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="9946">
+  <assertionResult>
+    <name>Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <httpSample t="147" lt="146" ts="1654031930075" s="true" lb="HTTP Request-0" rc="301" rm="Moved Permanently" tn="Thread Group 1-1" dt="" by="321"/>
+  <httpSample t="798" lt="793" ts="1654031930223" s="true" lb="HTTP Request-1" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="9625"/>
+</httpSample>
+
+<httpSample t="265" lt="83" ts="1654031970897" s="true" lb="HTTP Request" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="9944">
+  <assertionResult>
+    <name>Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <httpSample t="83" lt="83" ts="1654031970897" s="true" lb="HTTP Request-0" rc="301" rm="Moved Permanently" tn="Thread Group 1-1" dt="" by="321"/>
+  <httpSample t="182" lt="177" ts="1654031970980" s="true" lb="HTTP Request-1" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="9623"/>
+</httpSample>
+
+</testResults>

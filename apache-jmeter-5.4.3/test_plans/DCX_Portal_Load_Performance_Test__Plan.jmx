@@ -411,6 +411,16 @@
               <stringProp name="Argument.value">/Property/LoadtestAssessmentValidation</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
+            <elementProp name="APIUrl" elementType="Argument">
+              <stringProp name="Argument.name">APIUrl</stringProp>
+              <stringProp name="Argument.value">betatestportalapi.bcassessment.ca</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="PortalWebAppUrl" elementType="Argument">
+              <stringProp name="Argument.name">PortalWebAppUrl</stringProp>
+              <stringProp name="Argument.value">www.bcassessment.ca</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
@@ -447,8 +457,8 @@
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">${BesttestPoralWebAppUrl}</stringProp>
-            <stringProp name="HTTPSampler.port">${Port}</stringProp>
+            <stringProp name="HTTPSampler.domain">www.bcassessment.ca</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">${Protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path">${DataValidation}</stringProp>
@@ -479,7 +489,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="Address" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value"> LOAD TEST - 2009 WESTVIEW DR NORTH VANCOUVER</stringProp>
+                  <stringProp name="Argument.value">LOAD TEST - 2009 WESTVIEW DR NORTH VANCOUVER</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">Address</stringProp>
@@ -556,11 +566,11 @@
                 </elementProp>
               </collectionProp>
             </elementProp>
-            <stringProp name="HTTPSampler.domain">${BesttestPoralWebAppUrl}</stringProp>
-            <stringProp name="HTTPSampler.port">${Port}</stringProp>
+            <stringProp name="HTTPSampler.domain">www.bcassessment.ca</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">${Protocol}</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${LoadAssessmentvalidation}</stringProp>
+            <stringProp name="HTTPSampler.path">/Property/LoadtestAssessmentValidation</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -583,6 +593,45 @@
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get API" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;Address&quot;: &quot;978 DARWIN AVE VICTORIA V8X 2X9&quot;&#xd;
+	&quot;Area&quot;: &quot;08&quot;&#xd;
+	&quot;Jurisdiction&quot;: &quot;221&quot;&#xd;
+	&quot;RollNumber&quot;: &quot;01-308-65-1505-000&quot;&#xd;
+	&quot;AreaDescription&quot;: &quot;North Shore-Squamish Valley (08)&quot;&#xd;
+	&quot;JurisdictionDescription&quot;: &quot;North Vancouver - City (221)&quot;&#xd;
+	&quot;PinNumber&quot;: &quot;0008640797&quot;&#xd;
+	&quot;ContactName&quot;: &quot;lu zhao(this is a post production test)&quot;&#xd;
+	&quot;PhoneNumber&quot;: &quot;1234567890&quot;&#xd;
+	&quot;Email&quot;: &quot;lu.zhao@bcassessment.ca&quot;&#xd;
+	&quot;EmailVerifaction&quot;: &quot;lu.zhao@bcassessment.ca&quot;&#xd;
+}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${APIUrl}</stringProp>
+            <stringProp name="HTTPSampler.port">${Port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">${Protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/contact</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -2778,7 +2827,7 @@
             </value>
           </objProp>
           <stringProp name="filename"></stringProp>
-          <stringProp name="RespTimeGraph.interval">5000</stringProp>
+          <stringProp name="RespTimeGraph.interval">1000</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
